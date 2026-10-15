@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tetherling Support</title>
+<meta name="description" content="Support for Tetherling, a one-touch neon swing game for iPhone.">
+<style>
+  :root {
+    --bg1: #2a1262;
+    --bg2: #07061a;
+    --card: rgba(255, 255, 255, 0.06);
+    --edge: rgba(255, 255, 255, 0.14);
+    --text: #eceaf7;
+    --muted: #a9a4c9;
+    --accent: #35e4ff;
+    --pink: #ff4fbf;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    min-height: 100vh;
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background:
+      radial-gradient(900px 500px at 15% -5%, rgba(53, 228, 255, 0.18), transparent 60%),
+      radial-gradient(800px 600px at 90% 10%, rgba(255, 79, 191, 0.16), transparent 60%),
+      linear-gradient(180deg, var(--bg1), var(--bg2) 70%);
+    background-attachment: fixed;
+    padding: 0 20px 64px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+  header { padding: 40px 0 8px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .orb {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: radial-gradient(circle at 32% 30%, #fff 0, #ff7ad0 22%, #ff2fb0 55%, #a3158a 100%);
+    box-shadow: 0 0 22px rgba(255, 79, 191, 0.75), 0 0 60px rgba(255, 79, 191, 0.35);
+  }
+  .brand span { font-weight: 800; letter-spacing: 0.28em; font-size: 15px; }
+  .lang { display: inline-flex; border: 1px solid var(--edge); border-radius: 999px; padding: 4px; background: var(--card); }
+  .lang button {
+    appearance: none; border: 0; cursor: pointer; font: inherit; font-size: 14px; font-weight: 700;
+    color: var(--muted); background: transparent; padding: 8px 16px; border-radius: 999px;
+  }
+  .lang button[aria-pressed="true"] { color: #07061a; background: var(--accent); box-shadow: 0 0 18px rgba(53, 228, 255, 0.45); }
+  h1 { font-size: clamp(30px, 6vw, 44px); line-height: 1.15; margin: 28px 0 6px; letter-spacing: -0.01em; }
+  .updated { color: var(--muted); margin: 0 0 28px; font-size: 15px; }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--edge);
+    border-radius: 22px;
+    padding: 24px 24px 8px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  section { margin-bottom: 22px; }
+  h2 { font-size: 19px; margin: 0 0 6px; color: var(--accent); letter-spacing: 0.01em; }
+  p { margin: 0 0 10px; }
+  ul { margin: 6px 0 10px; padding-left: 22px; }
+  li { margin-bottom: 4px; }
+  a { color: var(--accent); text-underline-offset: 3px; }
+  footer { color: var(--muted); font-size: 14px; text-align: center; margin-top: 28px; }
+  [data-lang] { display: none; }
+  body[data-show="en"] [data-lang="en"], body[data-show="tr"] [data-lang="tr"] { display: block; }
+  body[data-show="en"] li[data-lang="en"], body[data-show="tr"] li[data-lang="tr"] { display: list-item; }
+</style>
+</head>
+<body data-show="en">
+<div class="wrap">
+  <header>
+    <div class="brand"><div class="orb" aria-hidden="true"></div><span>TETHERLING</span></div>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set="en" aria-pressed="true">English</button>
+      <button type="button" data-set="tr" aria-pressed="false">Türkçe</button>
+    </div>
+  </header>
+
+  <!-- ENGLISH -->
+  <div data-lang="en">
+    <h1>Support</h1>
+    <p class="updated">Help for Tetherling, the one-touch neon swing game</p>
+    <div class="card">
+      <section>
+        <h2>How do I play?</h2>
+        <p>Press and hold the screen to throw your rope to the nearest anchor above you. Let go to fly forward. Don't touch the walls. Collect orbs, grab bonus balls and spend orbs in the shop on cosmetics.</p>
+      </section>
+      <section>
+        <h2>My score is not on the leaderboard</h2>
+        <p>Make sure you are signed in to Game Center (iOS Settings &gt; Game Center) and have an internet connection, then play another run. Scores are sent when a run ends.</p>
+      </section>
+      <section>
+        <h2>Is my progress saved?</h2>
+        <p>Your orbs, unlocks and best distance are stored on your iPhone only. Deleting the app removes them.</p>
+      </section>
+      <section>
+        <h2>Contact us</h2>
+        <p>Found a bug or have an idea? Write to <a href="mailto:support@adspine.app">support@adspine.app</a> and tell us your phone model and iOS version.</p>
+        <p><a href="../">Privacy Policy</a></p>
+      </section>
+    </div>
+  </div>
+
+  <!-- TÜRKÇE -->
+  <div data-lang="tr">
+    <h1>Destek</h1>
+    <p class="updated">Tek dokunuşla oynanan neon sallanma oyunu Tetherling için yardım</p>
+    <div class="card">
+      <section>
+        <h2>Nasıl oynanır?</h2>
+        <p>Ekrana basılı tutarak ipini yukarıdaki en yakın çiviye at. Bırakınca ileri uçarsın. Duvarlara değme. Işık topla, bonus topları kap ve ışıkları mağazada görsel öğelere harca.</p>
+      </section>
+      <section>
+        <h2>Skorum sıralamada görünmüyor</h2>
+        <p>Game Center'a giriş yaptığından (iOS Ayarlar &gt; Game Center) ve internete bağlı olduğundan emin ol, sonra bir koşu daha oyna. Skorlar koşu bitince gönderilir.</p>
+      </section>
+      <section>
+        <h2>İlerlemem kaydediliyor mu?</h2>
+        <p>Işıkların, açtıkların ve en iyi mesafen yalnızca iPhone'unda saklanır. Uygulamayı silmek bunları da siler.</p>
+      </section>
+      <section>
+        <h2>Bize ulaş</h2>
+        <p>Bir hata mı buldun ya da fikrin mi var? <a href="mailto:support@adspine.app">support@adspine.app</a> adresine yaz, telefon modelini ve iOS sürümünü belirt.</p>
+        <p><a href="../">Gizlilik Politikası</a></p>
+      </section>
+    </div>
+  </div>
+
+  <footer>Tetherling &middot; <a href="mailto:support@adspine.app">support@adspine.app</a></footer>
+</div>
+
+<script>
+  (function () {
+    var body = document.body;
+    var buttons = document.querySelectorAll(".lang button");
+    function show(lang) {
+      body.setAttribute("data-show", lang);
+      document.documentElement.lang = lang;
+      document.title = lang === "tr" ? "Tetherling Destek" : "Tetherling Support";
+      buttons.forEach(function (b) { b.setAttribute("aria-pressed", b.getAttribute("data-set") === lang ? "true" : "false"); });
+      try { localStorage.setItem("lang", lang); } catch (e) {}
+    }
+    buttons.forEach(function (b) { b.addEventListener("click", function () { show(b.getAttribute("data-set")); }); });
+    var saved = null;
+    try { saved = localStorage.getItem("lang"); } catch (e) {}
+    var guess = (navigator.language || "en").toLowerCase().indexOf("tr") === 0 ? "tr" : "en";
+    show(saved || guess);
+  })();
+</script>
+</body>
+</html>
